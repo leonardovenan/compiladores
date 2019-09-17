@@ -18,7 +18,7 @@ int main()
     tam = strlen(express);
 
     estado_maquina = 1;
-    while(estado_maquina == 1 || estado_maquina ==2){
+    while(estado_maquina == 1 || estado_maquina == 2){
         switch(estado_maquina){
         case 1:
             if(isalpha(express[i])){
@@ -40,10 +40,10 @@ int main()
     }
 
     if(estado_maquina == 3){
-        printf("Aceitacao\n\n");
+        printf("\nAceitacao\n\n");
     }
     else{
-        printf("Erro!\n\n");
+        printf("\nErro!\n\n");
     }
     system("pause");
     return 0;
