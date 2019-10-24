@@ -5,6 +5,11 @@
 #include <ctype.h>
 #include <string.h>
 
+static TokenType token; /* holds current token */
+/* function prototypes for recursive calls */
+static TreeNode * term(void);
+static TreeNode * exp(void);
+
 void error(void) {
 	fprintf(stderr, "Error\n");
 	exit(1);
@@ -14,6 +19,18 @@ void match(char expectedToken)
 {
 	if (token == expectedToken) token = getchar();
 	else error();
+}
+
+int main()
+{
+	TreeNode * result;
+	token = getchar(); /* carga de marca com primeiro caractere para verificação à frente */
+	result = exp();
+	if (token == '\n') /* teste final de linha */
+		printf("Result = %d\n", result);
+	else error();/* caracteres indevidos na linha */
+
+	system("pause");
 }
 
 #ifndef FALSE
@@ -72,11 +89,6 @@ typedef struct treeNode
 	} attr;
 	ExpType type; /* for type checking of exps */
 } TreeNode;
-
-static TokenType token; /* holds current token */
-
-/* function prototypes for recursive calls */
-static TreeNode * term(void);
 
 /* Function newExpNode creates a new expression
  * node for syntax tree construction
