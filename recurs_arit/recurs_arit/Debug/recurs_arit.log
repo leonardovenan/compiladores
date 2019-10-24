@@ -1,0 +1,3 @@
+﻿  recurs_div_rest.c
+c:\users\leonardo\source\repos\recurs_arit\recurs_arit\recurs_div_rest.c(46): warning C4013: 'getch' indefinido; assumindo extern retornando int
+  recurs_arit.vcxproj -> C:\Users\Leonardo\source\repos\recurs_arit\Debug\recurs_arit.exe

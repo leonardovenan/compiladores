@@ -1,0 +1,7 @@
+﻿  recurs_div_rest.c
+c:\users\leonardo\source\repos\recurs_arit\recurs_arit\recurs_div_rest.c(20): warning C4391: 'int exp(void)': tipo de retorno incorreto para função intrínseca, esperado 'double'
+c:\users\leonardo\source\repos\recurs_arit\recurs_arit\recurs_div_rest.c(20): warning C4392: 'int exp(void)': número de argumentos incorreto para função intrínseca, esperados '1' argumentos
+c:\users\leonardo\source\repos\recurs_arit\recurs_arit\recurs_div_rest.c(37): error C2168: 'exp': poucos parâmetros reais para função intrínseca
+c:\users\leonardo\source\repos\recurs_arit\recurs_arit\recurs_div_rest.c(44): warning C4392: 'int exp(void)': número de argumentos incorreto para função intrínseca, esperados '1' argumentos
+c:\users\leonardo\source\repos\recurs_arit\recurs_arit\recurs_div_rest.c(44): error C2169: 'exp': função intrínseca, não pode ser definida
+c:\users\leonardo\source\repos\recurs_arit\recurs_arit\recurs_div_rest.c(71): error C2168: 'exp': poucos parâmetros reais para função intrínseca

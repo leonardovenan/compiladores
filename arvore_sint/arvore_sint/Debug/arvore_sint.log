@@ -1,0 +1,3 @@
+﻿  arvore_sint.cpp
+c:\users\leonardo\source\repos\arvore_sint\arvore_sint\arvore_sint.cpp(120): warning C4101: 'novaTemp': variável local não referenciada
+  arvore_sint.vcxproj -> C:\Users\Leonardo\source\repos\arvore_sint\Debug\arvore_sint.exe
