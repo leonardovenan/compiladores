@@ -5,34 +5,6 @@
 #include <ctype.h>
 #include <string.h>
 
-static TokenType token; /* holds current token */
-/* function prototypes for recursive calls */
-static TreeNode * term(void);
-static TreeNode * exp(void);
-
-void error(void) {
-	fprintf(stderr, "Error\n");
-	exit(1);
-}
-
-void match(char expectedToken)
-{
-	if (token == expectedToken) token = getchar();
-	else error();
-}
-
-int main()
-{
-	TreeNode * result;
-	token = getchar(); /* carga de marca com primeiro caractere para verificação à frente */
-	result = exp();
-	if (token == '\n') /* teste final de linha */
-		printf("Result = %d\n", result);
-	else error();/* caracteres indevidos na linha */
-
-	system("pause");
-}
-
 #ifndef FALSE
 #define FALSE 0
 #endif
@@ -90,6 +62,35 @@ typedef struct treeNode
 	ExpType type; /* for type checking of exps */
 } TreeNode;
 
+char token; /* holds current token */
+/* function prototypes for recursive calls */
+static TreeNode *exp(void);
+static TreeNode *term(void);
+static TreeNode *factor(void);
+
+void error(void) {
+	fprintf(stderr, "Error\n");
+	exit(1);
+}
+
+static void match(char expectedToken)
+{
+	if (token == expectedToken) token = getchar();
+	else error();
+}
+
+int main()
+{
+	TreeNode * result;
+	token = getchar(); /* carga de marca com primeiro caractere para verificação à frente */
+	result = exp();
+	if (token == '\n') /* teste final de linha */
+		printf("Result = %d\n", result);
+	else error();/* caracteres indevidos na linha */
+
+	system("pause");
+}
+
 /* Function newExpNode creates a new expression
  * node for syntax tree construction
  */
@@ -109,6 +110,40 @@ TreeNode * exp(void)
 			temp = novotemp;
 		}
 	}
+	return temp;
+}
+
+TreeNode * term(void)
+{
+	TreeNode * temp = factor();
+	while ((token == '*') || (token == '%') || (token == '/'))
+	{
+		TreeNode * novotemp = criaNoOp(OpK);
+		if (novotemp != NULL) {
+			novotemp->child[0] = temp;
+			novotemp->attr.op = token;
+			temp = novotemp;
+			match(token);
+			novotemp->child[1] = factor();
+		}
+	}
+	return temp;
+}
+
+TreeNode * factor(void)
+{
+	TreeNode * temp = NULL;
+	if (token == '(') {
+		match('(');
+		temp = exp();
+		match(')');
+	}
+	else if (isdigit(token)) {
+		ungetc(token, stdin);
+		scanf("%d", &temp);
+		token = getchar();
+	}
+	else error();
 	return temp;
 }
 
