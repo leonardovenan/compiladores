@@ -3,6 +3,7 @@
 #include <ctype.h> // for 'isdigit()'
 #include "Tree.h"
 #include "Stack.h"
+#include "Common.h"
 
 char token; // variable for reading a charactor
 Root *root;
@@ -72,7 +73,8 @@ int main()
 
 	/// delete
 	remove_all_tree_nodes(root);
-	return 0;
+	
+	system("pause");
 }
 
 /** \brief

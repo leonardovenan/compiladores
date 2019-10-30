@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1572380834 source:c:\users\leonardo\source\repos\arvore_sint\arvore_sint\arvore_sint.cpp
+	<ctype.h>
+	"Tree.h"
+	"Stack.h"
+
+1572381569 c:\users\leonardo\source\repos\arvore_sint\arvore_sint\tree.h
+	"Common.h"
+
+1572381567 c:\users\leonardo\source\repos\arvore_sint\arvore_sint\common.h
+	<stdlib.h>
+	<stdio.h>
+
+1572381698 c:\users\leonardo\source\repos\arvore_sint\arvore_sint\stack.h
+	"Common.h"
+
+1572380902 source:c:\users\leonardo\source\repos\arvore_sint\arvore_sint\tree.c
+	"Tree.h"
+
+1572382019 source:c:\users\leonardo\source\repos\arvore_sint\arvore_sint\arvore_sint.c
+	<ctype.h>
+	"Tree.h"
+	"Stack.h"
+	"Common.h"
+
+1572381958 source:c:\users\leonardo\source\repos\arvore_sint\arvore_sint\stack.c
+	"Stack.h"
+
